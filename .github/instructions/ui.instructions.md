@@ -49,7 +49,31 @@ Refer to technology-specific instruction files:
 - Create reusable components for common UI patterns
 - Keep components focused on a single responsibility
 - Use props for configuration, not duplication
-- Document component APIs with TypeScript types
+- Document component APIs with a typed `Props` interface
+
+## Comments and Documentation
+
+- Comment intent, constraints, and non-obvious decisions — explain **why** the
+  code exists rather than restating what the code already says.
+- Do not add comments that merely paraphrase a nearby statement or describe
+  standard HTML, Astro, or TypeScript syntax.
+- Keep comments current with the implementation. Update or remove a comment in
+  the same change when the related behavior changes.
+- Reusable `.astro` components must define and document their `Props`
+  interface so the component contract is clear to callers. Describe
+  non-obvious props, defaults, and rendering constraints inline with TSDoc
+  comments where useful.
+- Prefer self-documenting names and types over comments for straightforward
+  behavior.
+
+## TypeScript Formatting
+
+- Use two-space indentation, single quotes, semicolons, and spaces inside
+  object braces (`{ value }`) with no spaces inside array brackets (`[value]`).
+- Keep multiline expressions readable and follow the surrounding file's
+  formatting when Astro syntax requires a local exception.
+- ESLint enforces the applicable quote, semicolon, and bracket-spacing rules
+  for `.ts` files; run `npm run lint` before submitting changes.
 
 ## Development Workflow
 
